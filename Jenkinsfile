@@ -21,8 +21,7 @@ pipeline {
         script {
           docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:8080")
         }
-       }
       }
-     }
     }
-   }
+  }
+}
