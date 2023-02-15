@@ -10,4 +10,6 @@ FROM eclipse-temurin:latest
 
 EXPOSE 9000
 
+COPY --from=build /home/app/target/springboot-hello-world.jar /data/springboot-hello-world.jar
+
 CMD ["java","-jar","/data/springboot-hello-world.jar"]
