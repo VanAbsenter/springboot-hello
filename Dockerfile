@@ -8,6 +8,6 @@ RUN mvn package
 
 FROM eclipse-temurin:latest
 
-EXPOSE 8080
+EXPOSE 9000
 
 CMD ["java","-jar","/data/springboot-hello-world.jar"]
