@@ -1,4 +1,5 @@
 FROM maven:3.8.3-jdk-11-slim AS build
+LABEL test1
 WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline
