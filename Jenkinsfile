@@ -1,12 +1,7 @@
 pipeline {
   agent any
   
-  environment {
-    DOCKER_IMAGE = "my-app"
-    DOCKER_TAG = "latest"
-    DOCKER_PORT = "8080"
-  }
-
+  
   stages {
     stage('Build and Push Docker Image') {
       steps {
