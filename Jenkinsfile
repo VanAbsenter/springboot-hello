@@ -18,7 +18,7 @@ pipeline {
 
     stage('Run Docker Container') {
       steps {
-        sh 'docker run mydockerhubusername"
+        sh 'docker run mydockerhubusername/my-app ."
           
         }
       }
