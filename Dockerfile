@@ -1,11 +1,8 @@
-FROM jenkins/jenkins:lts-jdk11
-USER root
+FROM adoptopenjdk/openjdk11:alpine-jre
 
-COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh << /usr/share/jenkins/ref/plugins.txt
+ARG APP_NAME="product-service"
+ARG APP_VERSION="0.0.1"
+ARG JAR_FILE="/build/libs/${APP_NAME}-${APP_VERSION}.jar"
 
-RUN apt-get update -y
-RUN apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common docker.io
-RUN docker --version
-
-RUN usermod -aG docker jenkins
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar", "app.jar"]
