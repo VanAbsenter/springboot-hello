@@ -19,7 +19,7 @@ pipeline {
     stage('Run Docker Container') {
       steps {
         script {
-          docker.run("-it -d ${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000")
+          docker.run("-t -d ${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000")
           
         }
       }
