@@ -4,7 +4,7 @@ pipeline {
   environment {
     DOCKER_IMAGE = "mydockerhubusername/my-app"
     DOCKER_TAG = "latest"
-    DOCKER_PORT = "8080"
+    DOCKER_PORT = "9000"
   }
 
   stages {
@@ -19,7 +19,7 @@ pipeline {
     stage('Run Docker Container') {
       steps {
         script {
-          docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:8080")
+          docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000")
         }
       }
     }
