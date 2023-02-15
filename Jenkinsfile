@@ -1,27 +1,55 @@
 pipeline {
-  agent any
-  
-  environment {
-    DOCKER_IMAGE = "mydockerhubusername/my-app"
-    DOCKER_TAG = "latest"
-    DOCKER_PORT = "8080"
-  }
+    agent { label 'ubuntu' }
 
-  stages {
-    stage('Build and Push Docker Image') {
-      steps {
-        script {
-          docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
+    stages {
+        stage('Docker version') {
+            steps {
+                sh "echo $USER"
+                sh 'docker version'
+            }
         }
-      }
-    }
-
-    stage('Run Docker Container') {
-      steps {
-        script {
-          docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:8080")
+        stage('Delete workspace before build starts') {
+            steps {
+                echo 'Deleting workspace'
+                deleteDir()
+            }
         }
-      }
+        stage('Checkout') {
+            steps{
+                git branch: 'main',
+                    url: 'https://github.com/bakavets/docker-lessons.git'        
+                }
+        }
+        stage('Test') {
+            steps{
+                dir('lesson-1') {
+                    sh "ls -la "
+                    sh "pwd"
+                }
+                    sh "ls -la "
+                    sh "pwd"
+            }
+        }
+        stage('Build docker image') {
+            steps{
+                dir('lesson-1') {
+                    sh 'docker build -t bakavets/jenkins-images:0.4 .'
+                }
+            }
+        }
+        stage('Push docker image to DockerHub') {
+            steps{
+                withDockerRegistry(credentialsId: 'dockerhub-cred-bakavets', url: 'https://index.docker.io/v1/') {
+                    sh '''
+                        docker push bakavets/jenkins-images:0.4
+                    '''
+                }
+            }
+        }
+        stage('Delete docker image locally') {
+            steps{
+                sh 'docker rmi bakavets/jenkins-images:0.4'
+            }
+        }
     }
-  }
 }
