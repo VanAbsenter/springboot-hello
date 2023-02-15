@@ -18,7 +18,7 @@ pipeline {
 
     stage('Run Docker Container') {
       steps {
-        sh 'docker run my-app'
+        sh 'docker run 04c22e75a2f1'
           
         }
       }
