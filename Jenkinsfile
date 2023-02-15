@@ -19,7 +19,7 @@ pipeline {
     stage('Run Docker Container') {
       steps {
         script {
-          sh 'docker build .'
+          sh 'docker run .'
           
         }
       }
