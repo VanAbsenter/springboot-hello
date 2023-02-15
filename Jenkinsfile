@@ -12,6 +12,8 @@ pipeline {
       steps {
         script {
           docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-creds')
+          docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").PUH()
         }
       }
     }
