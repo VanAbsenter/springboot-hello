@@ -19,10 +19,11 @@ pipeline {
     stage('Run Docker Container') {
       steps {
         script {
-          sh 'docker run .'
+          docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000")
           
         }
       }
     }
   }
 }
+
