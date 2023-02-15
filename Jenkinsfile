@@ -2,13 +2,13 @@ pipeline {
   agent any
   
   environment {
-    DOCKER_IMAGE = "my-app"
+    DOCKER_IMAGE = "mydockerhubusername/my-app"
     DOCKER_TAG = "latest"
     DOCKER_PORT = "8080"
   }
 
   stages {
-    stage('Build Docker Image') {
+    stage('Build and Push Docker Image') {
       steps {
         script {
           docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
