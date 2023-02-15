@@ -8,5 +8,5 @@ FROM openjdk:17-alpine
 COPY --from=maven-builder app/target/dockube-spring-boot.jar /app-service/dockube-spring-boot.jar
 WORKDIR /app-service
 
-EXPOSE 8080
+EXPOSE 9000
 ENTRYPOINT ["java","-jar","dockube-spring-boot.jar"]
