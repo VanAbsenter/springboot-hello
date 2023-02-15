@@ -1,3 +1,4 @@
+
 pipeline {
   agent any
   
@@ -7,10 +8,20 @@ pipeline {
     DOCKER_PORT = "9000"
   }
 
-   stages {
-    stage('Build') {
+  stages {
+    stage('Build and Push Docker Image') {
       steps {
-        sh 'docker build -t mydockerhubusername/my-app .'          
+        script {
+          docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
+        }
+      }
+    }
+
+    stage('Run Docker Container') {
+      steps {
+        script {
+          docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000")
+          
         }
       }
     }
