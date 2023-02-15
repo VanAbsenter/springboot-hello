@@ -1,32 +1,27 @@
 pipeline {
-    agent any
-    
-      environment {
+  agent any
+  
+  environment {
     DOCKER_IMAGE = "mydockerhubusername/my-app"
     DOCKER_TAG = "latest"
     DOCKER_PORT = "8080"
   }
-    
-      stages {
-        stage('Delete workspace before build starts') {
-            steps {
-                echo 'Deleting workspace'
-                deleteDir()
-            }
+
+  stages {
+    stage('Build and Push Docker Image') {
+      steps {
+        script {
+          docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
         }
-       stage('Build docker image') {
-             steps{
-                dir('lesson-1') {
-                    sh 'docker build -t mydockerhubusername/my-app:0.4 .'
-                }
-            }
+      }
+    }
+
+    stage('Run Docker Container') {
+      steps {
+        script {
+          docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:8080")
         }
-        stage('Push docker image to DockerHub') {
-            steps{
-                withDockerRegistry(url: 'https://index.docker.io/v1/') {
-                    sh '''
-                        docker push mydockerhubusername/my-app:0.4
-                    '''
-                }
-            }
-        }
+      }
+    }
+  }
+}
