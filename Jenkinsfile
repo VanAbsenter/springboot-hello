@@ -8,7 +8,7 @@ pipeline {
   }
 
   stages {
-    stage('Build and Push Docker Image') {
+    stage('Build Docker Image') {
       steps {
         script {
           docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
