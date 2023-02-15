@@ -9,4 +9,4 @@ COPY --from=maven-builder app/target/dockube-spring-boot.jar /app-service/dockub
 WORKDIR /app-service
 
 EXPOSE 9000
-ENTRYPOINT ["java","-jar","dockube-spring-boot.jar"]
+ENTRYPOINT ["java","-jar","/data/springboot-hello-world.jar"]
