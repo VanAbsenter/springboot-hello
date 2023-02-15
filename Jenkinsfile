@@ -12,7 +12,15 @@ pipeline {
       steps {
         script {
           docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
-          docker.run("-d ${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000"
+        }
+      }
+    }
+
+    stage('Run Docker Container') {
+      steps {
+        script {
+          sh 'docker build .'
+          
         }
       }
     }
