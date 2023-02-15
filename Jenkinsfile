@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'ubuntu' }
+    agent any
 
     stages {
         stage('Docker version') {
@@ -17,38 +17,29 @@ pipeline {
         stage('Checkout') {
             steps{
                 git branch: 'main',
-                    url: 'https://github.com/bakavets/docker-lessons.git'        
+                    url: 'https://github.com/nongratt/springboot-hello.git'        
                 }
-        }
-        stage('Test') {
-            steps{
-                dir('lesson-1') {
-                    sh "ls -la "
-                    sh "pwd"
-                }
-                    sh "ls -la "
-                    sh "pwd"
             }
         }
         stage('Build docker image') {
             steps{
                 dir('lesson-1') {
-                    sh 'docker build -t bakavets/jenkins-images:0.4 .'
+                    sh 'docker build -t mydockerhubusername/my-app:0.4 .'
                 }
             }
         }
         stage('Push docker image to DockerHub') {
             steps{
-                withDockerRegistry(credentialsId: 'dockerhub-cred-bakavets', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(url: 'https://index.docker.io/v1/') {
                     sh '''
-                        docker push bakavets/jenkins-images:0.4
+                        docker push mydockerhubusername/my-app:0.4
                     '''
                 }
             }
         }
         stage('Delete docker image locally') {
             steps{
-                sh 'docker rmi bakavets/jenkins-images:0.4'
+                sh 'docker rmi mydockerhubusername/my-app:0.4'
             }
         }
     }
