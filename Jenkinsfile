@@ -1,10 +1,6 @@
 pipeline {
   agent any
   
-  environment {
-    DOCKER_IMAGE = "mydockerhubusername/my-app"
-    DOCKER_TAG = "latest"
-  }
 
   stages {
     stage('Build and Push Docker Image') {
