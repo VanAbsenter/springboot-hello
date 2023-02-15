@@ -5,7 +5,6 @@ COPY pom.xml /app
 RUN mvn -f /app/pom.xml clean package -DskipTests
 FROM openjdk:17-alpine
 
-COPY --from=maven-builder app/target/dockube-spring-boot.jar /app-service/dockube-spring-boot.jar
 WORKDIR /app-service
 
 EXPOSE 9000
