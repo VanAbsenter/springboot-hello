@@ -7,19 +7,10 @@ pipeline {
     DOCKER_PORT = "9000"
   }
 
-  stages {
-    stage('Build Docker Image') {
+   stages {
+    stage('Build') {
       steps {
-        script {
-          docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
-        }
-      }
-    }
-
-    stage('Run Docker Container') {
-      steps {
-        sh 'docker run 04c22e75a2f1'
-          
+        sh 'docker build -t mydockerhubusername/my-app .'          
         }
       }
     }
