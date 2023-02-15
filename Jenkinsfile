@@ -37,10 +37,3 @@ pipeline {
                 }
             }
         }
-        stage('Delete docker image locally') {
-            steps{
-                sh 'docker rmi mydockerhubusername/my-app:0.4'
-            }
-        }
-    }
-}
