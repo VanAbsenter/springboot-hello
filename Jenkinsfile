@@ -4,7 +4,7 @@ pipeline {
   environment {
     DOCKER_IMAGE = "mydockerhubusername/my-app"
     DOCKER_TAG = "latest"
-    DOCKER_PORT = "8080"
+    DOCKER_PORT = "9000"
   }
 
   stages {
