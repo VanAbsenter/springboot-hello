@@ -1,13 +1,15 @@
-FROM maven:3.8.3-jdk-11-slim AS build
-WORKDIR /app
-COPY pom.xml
-RUN mvn dependency:go-offline
-COPY src/ /app/src/
+FROM maven:3-openjdk-18-slim AS build
+
+COPY src/ /home/app/src
+COPY pom.xml /home/app
+WORKDIR /home/app/
+
 RUN mvn package
 
+FROM eclipse-temurin:latest
 
-FROM openjdk:11-jre-slim
-WORKDIR /app
+EXPOSE 9000
 
-EXPOSE 8080
-CMD ["java", "jar", "app.jar"]
+COPY --from=build /home/app/target/springboot-hello-world.jar /data/springboot-hello-world.jar
+
+CMD ["java","-jar","/data/springboot-hello-world.jar"]
