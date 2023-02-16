@@ -15,14 +15,7 @@ pipeline {
         }
       }
     }
-    
-   stage('SCM Checkout') {
-            steps{
-            git 'https://github.com/nongratt/springboot-hello.git'
-        }
-      }
-    }    
-            
+      
    stage('Run Docker Container') {
       steps {
         script {
