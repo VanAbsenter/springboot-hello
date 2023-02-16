@@ -16,12 +16,14 @@ pipeline {
       }
     }
     
-    stage('SCM Checkout') {
+   stage('SCM Checkout') {
             steps{
             git 'https://github.com/nongratt/springboot-hello.git'
-            }
+        }
+      }
+    }    
             
-    stage('Run Docker Container') {
+   stage('Run Docker Container') {
       steps {
         script {
           docker.run("${DOCKER_IMAGE}:${DOCKER_TAG}", "-p ${DOCKER_PORT}:9000")
