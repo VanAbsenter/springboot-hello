@@ -28,7 +28,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push springboot-hello/app_test:latest'
+				sh 'docker push test8686/app_test:latest'
 			}
 		}
 	}
