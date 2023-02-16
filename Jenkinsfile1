@@ -4,6 +4,8 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker-hub-test8686')
+		DOCKER_IMAGE = "springboot-hello/app_test"
+                DOCKER_TAG = "latest"
 	}
 
 	stages {
