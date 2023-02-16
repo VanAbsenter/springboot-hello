@@ -10,8 +10,8 @@ pipeline {
   stages {
     stage('Build and Push Docker Image') {
       steps {  
-                sh 'docker build -t mydockerhubusername/my-app:$BUILD_NUMBER .'
-            }
+         sh 'docker build -t mydockerhubusername/my-app:$BUILD_NUMBER .'
+        }
       }
     }
       
