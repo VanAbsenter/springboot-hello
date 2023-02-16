@@ -2,9 +2,9 @@ pipeline {
   agent any
   
   environment {
-    DOCKER_IMAGE = "mydockerhubusername/my-app:latest"
+    DOCKER_IMAGE = "mydockerhubusername/my-app"
     DOCKER_TAG = "latest"
-    DOCKER_PORT = "9000:9000"
+    DOCKER_PORT = "9000"
   }
 
   stages {
@@ -15,7 +15,12 @@ pipeline {
         }
       }
     }
-
+    
+    stage('SCM Checkout') {
+            steps{
+            git 'https://github.com/nongratt/springboot-hello.git'
+            }
+            
     stage('Run Docker Container') {
       steps {
         script {
