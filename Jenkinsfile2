@@ -7,6 +7,12 @@ pipeline {
     DOCKER_PORT = "9000"
     DOCKERHUB_CREDENTIALS = credentials('docker-hub-test8686')
   }
+      stages { 
+        stage('SCM Checkout') {
+            steps{
+            git 'https://github.com/nongratt/springboot-hello.git'
+            }
+        }
 
   stages {
     stage('Build and Push Docker Image') {
