@@ -14,7 +14,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build .'
+				sh 'docker build -t springboot-hello/app_test:latest .'
 			}
 		}
 
