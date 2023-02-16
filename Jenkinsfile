@@ -2,9 +2,9 @@ pipeline {
   agent any
   
   environment {
-    DOCKER_IMAGE = "mydockerhubusername/my-app"
+    DOCKER_IMAGE = "mydockerhubusername/my-app:latest"
     DOCKER_TAG = "latest"
-    DOCKER_PORT = "9000"
+    DOCKER_PORT = "9000:9000"
   }
 
   stages {
