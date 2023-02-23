@@ -12,8 +12,6 @@
 
 ## Quick start
 
-See [System-wide installation](./SYSTEM.md) for system-wide installations
-(a.k.a. global mode).
 
 ### Linux (bash/zsh)
 
