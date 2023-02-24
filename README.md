@@ -8,6 +8,8 @@
 
 ## What
 
+Приложение springboot-hello было фокрнуто из https://github.com/VanAbsenter/springboot-hello.git, для обучения работы с процессами CI/CD.
+
 В данном разделе привиден пример составления pipeline Jenkins for push docker images in docker.hub.
 
 
