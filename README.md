@@ -94,7 +94,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword   полученный рез�
 
 ```
 
-###Git
+### Git
 
 ```
 sudo yum install git -y
