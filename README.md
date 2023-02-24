@@ -201,3 +201,10 @@ Jenkins — программная система с открытым исход
 ![jenkins](https://github.com/nongratt/springboot-hello/blob/main/images/maxresdefault.jpg)
 
 В нашем примере будет построен конвейер аналогичный скриншоту GIT----->JENKINS PIPELINE----->BUILD IMAGES----->PUSH DOCKER.HUB
+
+## CI CD
+
+
+### Dockerfile
+
+### Pipeline
