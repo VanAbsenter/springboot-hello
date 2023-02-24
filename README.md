@@ -158,5 +158,6 @@ VOLUME — создаёт точку подключения директории
 
 ### Теория Jenkins
 
+![jenkins](https://github.com/nongratt/springboot-hello/blob/main/images/maxresdefault.jpg)
 
 ### Основные компоненты
