@@ -5,6 +5,7 @@
    - [Linux](#linux-bashzsh)
      - [Docker (with bash)](#Docker)
      - [Jenkins (with bash)](#Jenkins)
+     - [Git (with bash)](#Git)
    - [So, what is next ?](#So-,-what-is-next-?)
    - [Все о Docker](#Все-о-Docker)
      - [Основы Docker](#Теория-Docker)
@@ -91,6 +92,16 @@ cat /var/lib/jenkins/secrets/initialAdminPassword   полученный рез�
 
 Выбираем левый пункт настройки плагинов после установки создаем Вашего первого пользователя пользователя
 
+```
+
+###Git
+
+```
+sudo yum install git -y
+git --version
+git config --global user.name "TESTINVS"  #Базовая информация об фиксации изминений в репе
+git config --global user.email "test@invs.ru" #Базовая информация об фиксации изминений в репе
+git config --list
 ```
 
 ## So, what is next ?
