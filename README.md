@@ -12,7 +12,9 @@
 
 
 
-### Linux (bash/zsh)
+## Linux (bash/zsh)
+
+### Docker (with bash)
 
 ```
 Установка репозитория
