@@ -106,7 +106,7 @@ Docker — программное обеспечение для автомати
 ### Основные компоненты
 
 ```
-![ALT](https://github.com/nongratt/springboot-hello/blob/main/112.PNG)
+![ALT](112.PNG)
 
 
 
