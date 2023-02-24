@@ -3,7 +3,7 @@
  - [ZERO TO HERO](#Сборка-приложения-в-DOCKER-с-помощью-Jenkins-pipline)
    - [What](#what)
    - [Linux (bash/zsh)](#linux-bashzsh)
-    - [MacOS (with bash)](#macos-with-bash)
+     - [MacOS (with bash)](#macos-with-bash)
 
 ## What
 
