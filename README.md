@@ -233,5 +233,51 @@ CMD ["java","-jar","/data/springboot-hello-world.jar"]
 ```
 ### Pipeline
 ```
+Сборка производится обычным выполнением этапов ( в данному случае это stages)
+
+pipeline{
+
+	agent { node {label "docker-node"}} 
+
+	environment {
+		DOCKERHUB_CREDENTIALS=credentials('docker-hub-test8686')
+		DOCKER_IMAGE = "springboot-hello/app_test"
+                DOCKER_TAG = "latest"    # Переменное окружение в данному случае креды 
+	}
+
+	stages {
+	    
+
+		stage('Build') {
+
+			steps {
+				sh 'docker build -t test8686/app_test:latest .'  #Этап сборки как писалось ранее выполняется обычнм shell скриптом docker build -t test8686/app_test:latest .
+			}
+		}
+
+		stage('Login') {
+
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'  # Этап логина на докер.хаб 
+			}
+		}
+
+		stage('Push') {
+
+			steps {
+				sh 'docker push test8686/app_test:latest'  #Пуш образа в наш репозиторий 
+			}
+		}
+	}
+
+	post {
+		always {
+			sh 'docker logout'
+		}
+	}
+
+}
+
+Копируем данный код и создаем файл у себя в репозитории Jenkinsfile и заполняем его.
 
 ```
