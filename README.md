@@ -50,5 +50,34 @@ sudo systemctl status docker
 ### Jenkins
 
 ```
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+
+apt install iptables-persistent
+
+netfilter-persistent save
+
+apt install default-jdk
+
+update-alternatives --config java
+
+apt-get install gnupg2
+
+vi /etc/apt/sources.list.d/jenkins.list
+
+deb https://pkg.jenkins.io/debian-stable binary/
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+apt install ca-certificates
+
+apt-get update
+
+systemctl enable jenkins
+
+Открываем браузер и переходим по адресу http://<IP-адреса сервера Jenkins>:8080 — откроется окно «Unlock Jenkins». В нем будет путь до файла, в котором нужно взять парольную фразу для разблокировки портала:
+
+cat /var/lib/jenkins/secrets/initialAdminPassword   полученный результат вбиваем в строчку веб морды
+
+Выбираем левый пункт настройки плагинов после установки создаем Вашего первого пользователя пользователя
 
 ```
