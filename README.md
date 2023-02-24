@@ -6,7 +6,7 @@
      - [Docker (with bash)](#Docker)
      - [Jenkins (with bash)](#Jenkins)
    - [So, what is next ?](#So-,-what-is-next-?)
-     - [Основы Docker](#Теория)
+     - [Основы Docker](#Теория-Docker)
 
 ## What
 
@@ -91,7 +91,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword   полученный рез�
 
 После произведенных установок пришло время узнать, что такое Docker и Jenkins.
 
-### Теория
+### Теория Docker
 
 ```
 
