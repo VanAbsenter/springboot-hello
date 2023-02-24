@@ -110,7 +110,7 @@ Docker — программное обеспечение для автомати
 
 
 
-![QWE]images/RES.PNG
+![QWE](main/images/RES.PNG)
 
 
 
