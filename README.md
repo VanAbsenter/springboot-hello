@@ -1,4 +1,4 @@
-# Сборка приложения в DOCKER с помощью Jenkins pipline
+# Сборка приложения в DOCKER с помощью Jenkins pipeline
 
  - [ZERO TO HERO](#Сборка-приложения-в-DOCKER-с-помощью-Jenkins-pipline)
    - [What](#what)
