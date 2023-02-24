@@ -110,7 +110,7 @@ Docker — программное обеспечение для автомати
 
 
 
-![res](https://github.com/nongratt/springboot-hello/blob/main/images/RES.PNG)
+![res]([https://github.com/nongratt/springboot-hello/blob/main/images/RES.PNG](https://github.com/nongratt/springboot-hello/blob/7ab10ef509f4a36f629de227e2b9c271a3c5a883/images/RES.PNG))
 
 
 
