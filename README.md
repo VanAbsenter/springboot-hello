@@ -106,6 +106,6 @@ Docker — программное обеспечение для автомати
 ### Основные компоненты
 
 
-![QWE](main/images/RES.PNG)
+![QWE](/images/RES.PNG)
 
 
