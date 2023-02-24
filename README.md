@@ -2,7 +2,7 @@
 
  - [ZERO TO HERO](#Сборка-приложения-в-DOCKER-с-помощью-Jenkins-pipline)
    - [What](#what)
-   - [Linux (bash/zsh)](#linux-bashzsh)
+   - [Linux docker (bash/zsh)](#linux-bashzsh)
      - [Docker (with bash)](#Docker-bash)
      - [Jenkins (with bash)](#macos-with-bash)
 
@@ -12,11 +12,9 @@
 
 
 
-### Linux (bash/zsh)
+### Linux docker (bash/zsh)
 
 ```
-### Docker (with bash)
-
 Установка репозитория
 
 sudo apt-get update
