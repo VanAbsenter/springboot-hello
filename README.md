@@ -106,7 +106,20 @@ Docker — программное обеспечение для автомати
 ### Основные компоненты
 
 ```
-![112](https://user-images.githubusercontent.com/125434455/221126657-8fdc454c-03b8-4342-bea3-3dc6afa269e3.PNG)
+![112](https://user-images.githubusercontent.com/125434455/221126791-c10f1b94-ae2b-49c8-9637-e0d6289202f0.PNG)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```
