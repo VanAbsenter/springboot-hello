@@ -15,7 +15,7 @@
 
 
 
-## Linux (bash/zsh)
+## Linux
 
 ### Docker
 
