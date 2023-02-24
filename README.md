@@ -114,9 +114,6 @@ Docker — программное обеспечение для автомати
 
 
 
-![RES](https://user-images.githubusercontent.com/125434455/221139176-64c16b2a-2b6a-4072-bad7-b8af6bf1a263.png)
-
-
 
 
 
