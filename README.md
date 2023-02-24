@@ -14,6 +14,9 @@
    - [Все о Jenkins](#Все-о-Jenkins)
      - [Основы Jenkins](#Теория-Jenkins)
      - [Архитектура](#Основые-компоненты)
+   - [Создание Dockerfile и Pipeline](#CI-CD)
+     - [Dockerfile](#Dockerfile)
+     - [Pipeline](#Pipeline)
 
 ## What
 
