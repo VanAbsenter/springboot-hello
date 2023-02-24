@@ -6,6 +6,7 @@
      - [Docker (with bash)](#Docker)
      - [Jenkins (with bash)](#Jenkins)
    - [So, what is next ?](#So,-what-is-next-?)
+     - [Docker основы](#Теория)
 
 ## What
 
@@ -87,3 +88,5 @@ cat /var/lib/jenkins/secrets/initialAdminPassword   полученный рез�
 ```
 
 ## So, what is next ?
+
+После произведенных установок пришло время узнать, что такое Docker и Jenkins.
