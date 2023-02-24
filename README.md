@@ -6,7 +6,7 @@
      - [Docker (with bash)](#Docker)
      - [Jenkins (with bash)](#Jenkins)
    - [So, what is next ?](#So-,-what-is-next-?)
-     - [Основы](#Теория)
+     - [Основы Docker](#Теория)
 
 ## What
 
