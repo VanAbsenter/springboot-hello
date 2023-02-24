@@ -21,7 +21,7 @@
 ```
 Установка репозитория
 
-sudo apt-get update
+sudo apt-get update #Обновляем состав устанолвенных пакетов 
 
 sudo apt-get install \
     ca-certificates \
@@ -30,11 +30,11 @@ sudo apt-get install \
     lsb-release
 sudo mkdir -m 0755 -p /etc/apt/keyrings
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg  #Ключ для работы с официальным репозиторием Docker  (дергаем из ранее созданной папки по пути  /etc/apt/keyrings)
 
  echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null     #Настройка репозитория
 
 Установка DOCKER
 
@@ -44,15 +44,17 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y  #Установка всего необходимо из ранее добавленного репозитория докер
 
-sudo systemctl status docker
+sudo systemctl start docker #Запуск
+
+sudo systemctl enable docker #Добавление в загрузчик 
 
 ```
 ### Jenkins
 
 ```
-iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT     #Доступность портов 80 с помощью firewall iptables если его нет, sudo apt-get install iptables
 
 apt install iptables-persistent
 
@@ -62,19 +64,18 @@ apt install default-jdk
 
 update-alternatives --config java
 
-apt-get install gnupg2
+apt-get install gnupg2   #Выполняем только если получаем ошибка о том что модуль не найден 
 
 vi /etc/apt/sources.list.d/jenkins.list
+deb https://pkg.jenkins.io/debian-stable binary/ #Первую строчку открываем, вторую добавляем это репозиторий 
 
-deb https://pkg.jenkins.io/debian-stable binary/
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -    #Импорт ключей для доступа к репозиторию
 
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-
-apt install ca-certificates
+apt install ca-certificates #Выполняем только если получаем ошибку
 
 apt-get update
 
-systemctl enable jenkins
+systemctl enable jenkins #Разрешаем автозапуск сервиса 
 
 Открываем браузер и переходим по адресу http://<IP-адреса сервера Jenkins>:8080 — откроется окно «Unlock Jenkins». В нем будет путь до файла, в котором нужно взять парольную фразу для разблокировки портала:
 
