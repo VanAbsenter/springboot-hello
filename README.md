@@ -2,7 +2,7 @@
 
  - [ZERO TO HERO](#Сборка-приложения-в-DOCKER-с-помощью-Jenkins-pipline)
    - [What](#what)
-   - [Linux (bash/zsh)](#linux-bashzsh)
+   - [Linux](#linux-bashzsh)
      - [Docker (with bash)](#Docker)
      - [Jenkins (with bash)](#Jenkins)
    - [So, what is next ?](#So,-what-is-next-?)
