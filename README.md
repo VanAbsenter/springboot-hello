@@ -169,10 +169,11 @@ VOLUME — создаёт точку подключения директории
 
 ### Теория Jenkins
 
-![jenkins](https://github.com/nongratt/springboot-hello/blob/main/images/maxresdefault.jpg)
 
 Jenkins — программная система с открытым исходным кодом на Java, предназначенная для обеспечения процесса непрерывной интеграции программного обеспечения
 
 ### Основные компоненты
+
+![jenkins](https://github.com/nongratt/springboot-hello/blob/main/images/maxresdefault.jpg)
 
 В нашем примере будет построен конвейер аналогичный скриншоту GIT----->JENKINS PIPELINE----->BUILD IMAGES----->PUSH DOCKER.HUB
