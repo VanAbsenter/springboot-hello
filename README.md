@@ -3,8 +3,8 @@
  - [ZERO TO HERO](#Сборка-приложения-в-DOCKER-с-помощью-Jenkins-pipline)
    - [What](#what)
    - [Linux (bash/zsh)](#linux-bashzsh)
-     - [Docker (with bash)](#Docker-bash)
-     - [Jenkins (with bash)](#macos-with-bash)
+     - [Docker (with bash)](#Docker)
+     - [Jenkins (with bash)](#Jenkins)
 
 ## What
 
@@ -14,7 +14,7 @@
 
 ## Linux (bash/zsh)
 
-### Docker-bash
+### Docker
 
 ```
 Установка репозитория
