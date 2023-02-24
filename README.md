@@ -2,11 +2,13 @@
 
  - [ZERO TO HERO](#Сборка-приложения-в-DOCKER-с-помощью-Jenkins-pipline)
    - [What](#what)
-   - [Quick start](#quick-start)
    - [Linux (bash/zsh)](#linux-bashzsh)
-   - [Install](#install)
+    - [MacOS (with bash)](#macos-with-bash)
 
 ## What
+
+В данном разделе привиден пример составления pipeline Jenkins for push docker images in docker.hub.
+
 
 
 ### Linux (bash/zsh)
