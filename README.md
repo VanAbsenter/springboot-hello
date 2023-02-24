@@ -285,7 +285,9 @@ pipeline{
 
 ```
 ## Заключение
+Сборка была завершена, как мы видим состояла из 4 этапов как они и прописаны в Pipeline
 
 ![qwe](https://github.com/nongratt/springboot-hello/blob/main/images/%D0%B9%D1%86%D1%83%D0%BA2.PNG)
 
+Во время сборки произошел удачный push в нашу репозиторию
 ![qw1e](https://github.com/nongratt/springboot-hello/blob/main/images/%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80.PNG)
