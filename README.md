@@ -15,6 +15,8 @@
 ### Linux (bash/zsh)
 
 ```
+### Docker (bash/zsh)
+
 Установка репозитория
 
 sudo apt-get update
