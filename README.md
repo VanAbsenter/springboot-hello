@@ -197,7 +197,7 @@ GitHub Branch Source Plugin
 ### Git
 
 ```
-sudo yum install git -y
+apt-get install git -y
 git --version
 git config --global user.name "TESTINVS"  #Базовая информация об фиксации изминений в репе
 git config --global user.email "test@invs.ru" #Базовая информация об фиксации изминений в репе
@@ -213,7 +213,7 @@ git config --list
 ```
 #Этап 1
 
-FROM maven:3-openjdk-18-slim AS build  #Обращз приложения maven 
+FROM maven:3-openjdk-18-slim AS build  #Образ приложения maven 
 
 COPY src/ /home/app/src # Копирование директории 
 COPY pom.xml /home/app  # Копирование кода
